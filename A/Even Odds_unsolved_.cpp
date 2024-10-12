@@ -1,23 +1,19 @@
-#include <iostream>
+#include<bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
-    long x, y;
+    int n, k;
 
-    cin >> x >> y;
+    cin >> n >> k;
 
-    int oddnum = (x + 1) / 2;
+    int odd_num = (n + 1) / 2;
 
-    if (y <= oddnum)
+    if (k <= odd_num)
     {
-    cout << 2 * y - 1 << endl;
+        cout << abs((k * 2) - 1);
     }
-    else {
-        cout << 2 * (y - oddnum) << endl;
-    }
+    else
+        cout << abs(2 * (odd_num - k));
 }
-
-
-// Unsolved
