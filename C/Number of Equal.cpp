@@ -1,34 +1,27 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
 int main()
 {
-    int n, m, count = 0;
+    int n, m, input;
+    ll counter = 0;
 
     cin >> n >> m;
 
-    int arr1[n], arr2[m];
+    unordered_map<int, int> freq;
 
     for (int i = 0; i < n; i++)
     {
-        cin >> arr1[i];
+        cin >> input;
+        freq[input]++;
     }
 
     for (int i = 0; i < m; i++)
     {
-        cin >> arr2[i];
+        cin >> input;
+        counter += freq[input];
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            if(arr1[i] == arr2[j])
-                count++;
-            else if (arr1[i] < arr2[j])
-                break;
-        }
-        
-    }
-    cout << count;
+    cout << counter;
 }
