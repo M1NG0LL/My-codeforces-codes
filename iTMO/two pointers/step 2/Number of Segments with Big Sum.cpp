@@ -17,28 +17,21 @@ int main()
         cin >> a[i];
     }
 
-    int l = 0, ctr = INT_MAX;
+    int l = 0;
+    ll ctr = 0;
     ll sum = 0;
 
     for (int r = 0; r < n; r++)
     {
         sum += a[r];
 
-        while (sum - a[l] >= s)
+        while (sum > s)
         {
             sum -= a[l];
             l++;
         }
-        if (sum >= s)
-            ctr = min(ctr, r - l + 1);
+        ctr += l;
     }
 
-    if (ctr == INT_MAX)
-    {
-        cout << -1 << endl;
-    }
-    else
-    {
-        cout << ctr << endl;
-    }
+    cout << ctr << endl;
 }
